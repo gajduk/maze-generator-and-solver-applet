@@ -129,6 +129,7 @@ public class MazeApplet extends Applet {
 					    "You can change the start tile by right click and the end tile by middle click on the desired tile.\n"+
 					    "You can also create your own mazes.\nSimply left click on any tile and it will change from wall (red) to room (gray).\n"+
 					    "You can change multiple tiles by dragging the mouse with the left button pressed.\n"+
+					    "You can specify width and height in the input fields (must be larger then 1 and smaller then 180).\n"+
 					    "Have fun!\n"+
 					    "Made by Andrej Gajduk.",
 					    "How to use?",
@@ -475,9 +476,9 @@ public class MazeApplet extends Applet {
 	 
 
 	void resetMaze(int width, int height) {
-		if ( height <= 1 || height > 80 ) 
+		if ( height <= 1 || height > 180 ) 
 			throw new ArrayIndexOutOfBoundsException();
-		if ( width <= 1 || width > 80 )
+		if ( width <= 1 || width > 180 )
 			throw new ArrayIndexOutOfBoundsException();
 		maze = new int[width][height];
 		start_i = Math.min(width-1,start_i);
